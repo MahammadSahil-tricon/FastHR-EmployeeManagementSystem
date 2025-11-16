@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FastHR Login</title>
+
+    <style>
+        /* Fix spacing + reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Poppins, sans-serif;
+            background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            width: 350px;
+            background: white;
+            padding: 40px 35px;
+            border-radius: 18px;
+            box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Logo Circle */
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            background: #6c63ff;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.45);
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 26px;
+            color: #3f3f78;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border: 2px solid #dcdcff;
+            background: #f6f6ff;
+            font-size: 15px;
+            transition: 0.25s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #6c63ff;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(108, 99, 255, 0.35);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background: #6c63ff;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.25s ease-in-out;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #5148d8;
+            box-shadow: 0 8px 22px rgba(81, 72, 216, 0.45);
+            transform: translateY(-3px);
+        }
+
+        .error {
+            color: red;
+            margin-top: 12px;
+            height: 20px;
+            font-size: 14px;
+        }
+
+        /* Fade animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-card">
+        <div class="logo-circle">F</div>
+        <h1>FastHR Login</h1>
+
+        <input id="username" type="text" placeholder="Enter Username" />
+        <input id="password" type="password" placeholder="Enter Password" />
+
+        <button onclick="login()">Login</button>
+
+        <p id="error" class="error"></p>
+    </div>
+
+    <script>
+        function login() {
+            let user = document.getElementById("username").value.trim();
+            let pass = document.getElementById("password").value.trim();
+
+            if (user === "admin" && pass === "Admin123") {
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("error").textContent =
+                    "Invalid username or password!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
